@@ -6,11 +6,10 @@ services:
       dockerfile: deploy/Dockerfile
     ports:
       - "3206:3206"
-    # healthcheck intentionally omitted for simplicity
     environment:
       - FLASK_ENV=production
       - PORT=3206
-      - SECRET_KEY=insecure-dev-secret
+      - SECRET_KEY=sjw23dhdàqwd!!2@!
       - PAYMENT_API_KEY=sk_live_51QpA9fJf3Dq2vW0h9bA7xRj2Lw8nGmZK5mN2rS8cT4kY1uE3aB0cD7fP9qH2sL4
     restart: unless-stopped
     command: ["python", "app.py"]
