@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SecureFleet Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <style>
+    :root { color-scheme: dark; }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-950 text-gray-100 flex flex-col">
+  <header class="border-b border-white/10 bg-gray-900/60 backdrop-blur supports-[backdrop-filter]:bg-gray-900/50">
+    <nav class="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
+      <a href="/integrations" class="text-lg font-semibold tracking-tight">SecureFleet Admin Portal</a>
+      <div class="flex items-center gap-3">
+        <a href="/integrations" class="px-3 py-1.5 rounded-md bg-white/5 hover:bg-white/10 transition">Integrations</a>
+        <a href="/admin" class="px-3 py-1.5 rounded-md bg-indigo-600 hover:bg-indigo-500 text-white transition">Admin</a>
+        <a href="/logout" class="px-3 py-1.5 rounded-md bg-red-600 hover:bg-red-500 text-white transition">Logout</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-5xl px-4 py-10 flex-1 w-full">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="mt-16 border-t border-white/10 py-6 text-center text-sm text-gray-400">
+    SecureFleet © 2025. Internal Operations Portal.
+  </footer>
+</body>
+</html>

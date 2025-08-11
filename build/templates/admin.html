@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="mb-8">
+  <h1 class="text-3xl font-semibold tracking-tight">Administration</h1>
+  <p class="mt-2 text-gray-400">Internal controls and secure configuration for billing integrations.</p>
+</section>
+
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+  <div class="rounded-2xl border border-white/10 bg-gray-900/60 p-6 shadow-xl backdrop-blur">
+    <div class="mb-2 text-lg font-medium">Configuration</div>
+    <p class="text-sm text-gray-400">Payment provider credentials</p>
+    <div class="mt-4 rounded-md border border-white/10 bg-gray-800 p-4 font-mono text-sm text-gray-200 break-all">
+      PAYMENT_API_KEY={{ payment_key }}
+    </div>
+    <p class="mt-2 text-xs text-gray-500">Keep this value confidential. Rotation recommended if exposed.</p>
+  </div>
+
+  <div class="rounded-2xl border border-white/10 bg-gray-900/60 p-6 shadow-xl backdrop-blur">
+    <div class="mb-2 text-lg font-medium">Audit</div>
+    <p class="text-sm text-gray-400">Recent administrative actions and integration health.</p>
+    <ul class="mt-4 list-disc space-y-1 pl-5 text-sm text-gray-300">
+      <li>Billing webhook verified</li>
+      <li>Subscription reconciliation complete</li>
+      <li>No pending alerts</li>
+    </ul>
+  </div>
+</div>
+{% endblock %}
+
+

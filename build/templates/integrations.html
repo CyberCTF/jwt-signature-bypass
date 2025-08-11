@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="mb-8">
+  <h1 class="text-3xl font-semibold tracking-tight">Third-Party Integrations</h1>
+  <p class="mt-2 text-gray-400">Connect billing, telematics, and maintenance providers to streamline fleet operations.</p>
+</section>
+
+<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+  <div class="rounded-2xl border border-white/10 bg-gray-900/60 p-5 shadow-lg backdrop-blur">
+    <div class="mb-3 text-lg font-medium">Payments</div>
+    <p class="text-sm text-gray-400">Manage billing and subscriptions with our payment service provider.</p>
+    <div class="mt-4 flex gap-2">
+      <a href="/admin" class="rounded-md bg-white/5 px-3 py-2 text-sm hover:bg-white/10">Open Admin Panel</a>
+      <a href="#" class="rounded-md bg-indigo-600 px-3 py-2 text-sm text-white hover:bg-indigo-500">View</a>
+    </div>
+  </div>
+
+  <div class="rounded-2xl border border-white/10 bg-gray-900/60 p-5 shadow-lg backdrop-blur">
+    <div class="mb-3 text-lg font-medium">Telematics</div>
+    <p class="text-sm text-gray-400">Connect GPS devices to track vehicle location and utilization.</p>
+    <div class="mt-4 flex gap-2">
+      <a href="#" class="rounded-md bg-white/5 px-3 py-2 text-sm hover:bg-white/10">View</a>
+      <a href="#" class="rounded-md bg-white/5 px-3 py-2 text-sm hover:bg-white/10">Documentation</a>
+    </div>
+  </div>
+
+  <div class="rounded-2xl border border-white/10 bg-gray-900/60 p-5 shadow-lg backdrop-blur">
+    <div class="mb-3 text-lg font-medium">Maintenance</div>
+    <p class="text-sm text-gray-400">Sync with workshops to schedule and track maintenance tasks.</p>
+    <div class="mt-4 flex gap-2">
+      <a href="#" class="rounded-md bg-white/5 px-3 py-2 text-sm hover:bg-white/10">View</a>
+      <a href="#" class="rounded-md bg-white/5 px-3 py-2 text-sm hover:bg-white/10">Download</a>
+    </div>
+  </div>
+</div>
+
+<div class="mt-10"></div>
+{% endblock %}
+
+

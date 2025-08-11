@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="mx-auto max-w-md">
+  <div class="rounded-2xl border border-white/10 bg-gray-900/60 p-6 shadow-xl backdrop-blur">
+    <h1 class="mb-6 text-2xl font-semibold">Sign in to SecureFleet</h1>
+    {% if error %}
+    <div class="mb-4 rounded-md border border-red-500/20 bg-red-900/20 px-3 py-2 text-red-200">{{ error }}</div>
+    {% endif %}
+    <form method="post" class="space-y-4" aria-label="Login form">
+      <div>
+        <label class="mb-1 block text-sm text-gray-300" for="username">Username</label>
+        <input id="username" name="username" type="text" required class="w-full rounded-md border border-white/10 bg-gray-800 px-3 py-2 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="analyst" />
+      </div>
+      <div>
+        <label class="mb-1 block text-sm text-gray-300" for="password">Password</label>
+        <input id="password" name="password" type="password" required class="w-full rounded-md border border-white/10 bg-gray-800 px-3 py-2 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="analyst123" />
+      </div>
+      <button type="submit" class="w-full rounded-md bg-indigo-600 px-4 py-2 font-medium text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600">Sign in</button>
+    </form>
+    <p class="mt-3 text-xs text-gray-400">Default account: analyst / analyst123</p>
+  </div>
+  <p class="mt-6 text-center text-sm text-gray-400">By signing in, you agree to internal acceptable use policies.</p>
+  <div class="mt-8 text-center">
+    <a href="/integrations" class="text-indigo-400 hover:text-indigo-300">Go to Integrations</a>
+  </div>
+{% endblock %}
+
+

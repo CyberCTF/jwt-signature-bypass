@@ -1,0 +1,69 @@
+{
+  "site": {
+    "name": "SecureFleet",
+    "description": "Training lab: unsigned JWT enables admin access and sensitive data exposure.",
+    "logo": "/logo.png",
+    "copyright": "2025"
+  },
+  "navigation": {
+    "main": [
+      { "link": "/", "title": "Home" }
+    ],
+    "auth": [
+      { "link": "/login", "title": "Login" }
+    ]
+  },
+  "footer": {
+    "links": [
+      { "link": "/", "title": "Home" }
+    ],
+    "social": [
+      {
+        "name": "Website",
+        "href": "https://www.cyberctf.fr",
+        "icon": "website"
+      },
+      {
+        "name": "GitHub",
+        "href": "https://github.com/cyberctf",
+        "icon": "github"
+      }
+    ]
+  },
+  "challenge": {
+    "title": "Unsigned JWT Allows Admin Access",
+    "description": "This lab demonstrates how a JWT not verified server-side allows administrative access and exfiltration of sensitive data.",
+    "skills": ["JWT", "Web", "Authentication", "Access Control"],
+    "points": 160,
+    "element_to_proof": "Access /admin by forging a JWT with sub=administrator and retrieve the full PAYMENT_API_KEY value.",
+    "final_flag_info": "Exact value of PAYMENT_API_KEY.",
+    "walkthrough": "Title: Admin Access via Unsigned JWT\n\nQuestion: What type of token is used to manage the session?\nHint: Inspect the GET /my-account request after login.\nSolution: The cookie is a JWT.\n\nQuestion: Does the server validate the JWT signature?\nHint: Modify the payload, re-encode the JWT with an invalid or empty signature, then send it back.\nSolution: The server accepts the JWT even if the signature is invalid.\n\nQuestion: How to obtain an administrator role?\nHint: Change the sub claim to administrator.\nSolution: Access /admin with the modified JWT.\n\nQuestion: What sensitive information is available at /admin?\nHint: Look for a \"Configuration\" or \"API Keys\" section.\nSolution: Extract the PAYMENT_API_KEY value.\n\nFinal Flag Info: Exact value of PAYMENT_API_KEY."
+  },
+  "cta": {
+    "label": "Launch",
+    "link": "/login"
+  },
+  "lab_readme": {
+    "title": "Unsigned JWT Allows Admin Access",
+    "description": "This lab demonstrates how a server that does not verify JWT signatures can grant administrative access and leak sensitive data.",
+    "objectives": [
+      "Identify a JWT that is not properly verified",
+      "Modify the JWT payload to escalate privileges",
+      "Access a restricted admin panel",
+      "Locate and exfiltrate a sensitive API key"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_time": "15–25 minutes",
+    "prerequisites": "Knowledge of JWTs, Burp Suite or similar",
+    "skills_learned": [
+      "JWT manipulation",
+      "Signature bypass",
+      "Token-based access control testing"
+    ],
+    "quick_start": [
+      "Start services with Docker",
+      "Application at http://localhost:3206/login"
+    ],
+    "issue_tracker_url": "https://example.com/issues"
+  }
+} 

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="mx-auto max-w-2xl">
+  <div class="rounded-2xl border border-white/10 bg-gray-900/60 p-6 shadow-xl backdrop-blur">
+    <h1 class="mb-4 text-2xl font-semibold">My Account</h1>
+    <p class="text-sm text-gray-400">Review your current session token fields.</p>
+    <div class="mt-4 overflow-x-auto rounded-md border border-white/10 bg-gray-800 p-4">
+      <pre class="text-sm text-gray-200">{{ payload | tojson(indent=2) }}</pre>
+    </div>
+  </div>
+  <div class="mt-6 text-sm text-gray-400">
+    The application uses a JWT stored in the browser cookie to manage sessions.
+  </div>
+  <div class="mt-4">
+    <a href="/integrations" class="rounded-md bg-white/5 px-3 py-2 text-sm hover:bg-white/10">Back to Integrations</a>
+  </div>
+{% endblock %}
+
+
