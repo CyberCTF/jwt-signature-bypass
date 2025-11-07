@@ -25,5 +25,3 @@ How to report issues
 https://example.com/issues
 
 
-
-
